@@ -52,7 +52,7 @@ mkdir -p /data/web_static/releases/test /data/web_static/shared
 echo -e "$HOME_PAGE" > /data/web_static/releases/test/index.html
 [ -d /data/web_static/current ] && rm -rf /data/web_static/current
 ln -sf /data/web_static/releases/test/ /data/web_static/current
-chown -hR ubuntu:ubuntu /data
+chown -hR root:root /data
 bash -c "echo -e '$SERVER_CONFIG' > /etc/nginx/sites-available/default"
 ln -sf '/etc/nginx/sites-available/default' '/etc/nginx/sites-enabled/default'
 if [ "$(pgrep -c nginx)" -le 0 ]; then
