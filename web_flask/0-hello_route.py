@@ -1,14 +1,18 @@
 #!/usr/bin/python3
-""" Flask web application
+"""starts a Flask web application
 """
 from flask import Flask
 
-#Define the route
-@app.route('/', strict_slashes=False)
-def hello_flask():
-    """Displays Hello HBNB! """
-    return "Hello HBNB!"
 
-if __name__ =="__main__":
-    #start Server
+app = Flask(__name__)
+
+
+@app.route('/', strict_slashes=False)
+def hello():
+    """prints "Hello HBNB!"
+    """
+    return 'Hello HBNB!'
+
+
+if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
